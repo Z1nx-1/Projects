@@ -1,0 +1,23 @@
+Name = input("Enter your Name: ")
+Age = int(input("Enter your Age: "))
+Nationallity = input("Enter your nationallity: ")
+
+print(Name, Age, Nationallity)
+
+if Age >= 18:
+    print('Console - Adult')
+else:
+    print('Console - Not an adult')
+
+Proceed = input("Wish to proceed? Y/N: ")
+if Proceed == "Y":
+    print("Enter anything to continue")
+if Proceed == "N":
+    quit
+
+with open('data.txt', 'w') as f:
+    f.write(Name)
+    f.write(" ")
+    f.write('{}'.format(Age))
+    f.write(" ")
+    f.write(Nationallity)
