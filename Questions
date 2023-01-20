@@ -1,23 +1,46 @@
-Name = input("Enter your Name: ")
-Age = int(input("Enter your Age: "))
-Nationallity = input("Enter your nationallity: ")
+import time
+import uuid
 
-print(Name, Age, Nationallity)
+username = input("Username? ")
+password = input("Password? ")
+if username == 'Z!NX' and  password == 'echo':
+    print("Login Successful")
+else:
+    print("Login Failed")
+    time.sleep(1), quit()
 
-if Age >= 18:
+
+
+name = input("Enter your Name: ")
+age = int(input("Enter your Age: "))
+nationallity = input("Enter your nationallity: ")
+id = (uuid.uuid4())
+
+print("Console - ", name, age, nationallity)
+
+if age >= 18:
     print('Console - Adult')
 else:
     print('Console - Not an adult')
+    print("Console -", id)
+    print("Console - Save Your ID")
+
+save = input("Save DATA? Y/N: ")
+if save == "Y":
+  with open('data.txt', 'w') as f:
+    f.write(name)
+    f.write(" ")
+    f.write('{}'.format(age))
+    f.write(" ")
+    f.write(nationallity)
+    f.write(" ")
+    f.write('{}'.format(id))
+    print("Saved")
+if save == "N":
+    print("Console - DATA Discarded")
 
 Proceed = input("Wish to proceed? Y/N: ")
 if Proceed == "Y":
-    print("Enter anything to continue")
+    print("Close program")
 if Proceed == "N":
     quit
-
-with open('data.txt', 'w') as f:
-    f.write(Name)
-    f.write(" ")
-    f.write('{}'.format(Age))
-    f.write(" ")
-    f.write(Nationallity)
