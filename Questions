@@ -1,13 +1,22 @@
 import time
 import uuid
 
-username = input("Username? ")
-password = input("Password? ")
-if username == 'Z!NX' and  password == 'echo':
-    print("Login Successful")
-else:
-    print("Login Failed")
-    time.sleep(1), quit()
+login = input("Login? Y/N: ")
+if login == "N":
+    time.sleep(1)
+if login == "Y":
+    username = input("Username? ")
+    password = input("Password? ")
+    if username == 'Z!NX' and password == 'echo':
+        print("Login Successful")
+        time.sleep(1)    
+    else:
+        print("Login Failed")
+        time.sleep(1), quit()
+
+if login == "N":
+    print("Continued as Guest")
+    time.sleep
 
 
 
@@ -26,7 +35,7 @@ else:
     print("Console - Save Your ID")
 
 save = input("Save DATA? Y/N: ")
-if save == "Y":
+if save == "Y" or "y":
   with open('data.txt', 'w') as f:
     f.write(name)
     f.write(" ")
@@ -36,11 +45,13 @@ if save == "Y":
     f.write(" ")
     f.write('{}'.format(id))
     print("Saved")
-if save == "N":
+if save == "N" or "n":
     print("Console - DATA Discarded")
+    
 
 Proceed = input("Wish to proceed? Y/N: ")
 if Proceed == "Y":
-    print("Close program")
+    
+    print("Closing program")
 if Proceed == "N":
     quit
