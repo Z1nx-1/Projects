@@ -1,57 +1,35 @@
 import time
-import uuid
 
-login = input("Login? Y/N: ")
-if login == "N":
-    time.sleep(1)
-if login == "Y":
-    username = input("Username? ")
-    password = input("Password? ")
-    if username == 'Z!NX' and password == 'echo':
-        print("Login Successful")
-        time.sleep(1)    
+def login_function(username, password):
+    print("\n\nWelcome to Jack Program. Please Login: ")
+
+    user_entered_username = input("Enter USERNAME: ")
+    user_entered_password = input("Enter PASSWORD: ")
+    if user_entered_username == username and user_entered_password == password():
+        print("Login Successful.")
+        time.sleep(1)
     else:
-        print("Login Failed")
-        time.sleep(1), quit()
+        print("login failed.")
+        time.sleep, quit()
 
-if login == "N":
-    print("Continued as Guest")
-    time.sleep
+def find_username(incoming_credendials_files):
+    username = incoming_credendials_files.readline()
+    print("USERNAME: " + username) 
+    return username
 
+def find_password(incoming_credendials_files):
+    password = incoming_credendials_files.readline.readline()
+    print("PASSWORD: " + password)
+    return password
 
+def main():
 
-name = input("Enter your Name: ")
-age = int(input("Enter your Age: "))
-nationallity = input("Enter your nationallity: ")
-id = (uuid.uuid4())
+    credenials_file = open("login.txt", "r")
+    username = find_username(credenials_file)
+    password = find_password(credenials_file)
+   
+   
+    find_username
+    find_password
 
-print("Console - ", name, age, nationallity)
-
-if age >= 18:
-    print('Console - Adult')
-else:
-    print('Console - Not an adult')
-    print("Console -", id)
-    print("Console - Save Your ID")
-
-save = input("Save DATA? Y/N: ")
-if save == "Y" or "y":
-  with open('data.txt', 'w') as f:
-    f.write(name)
-    f.write(" ")
-    f.write('{}'.format(age))
-    f.write(" ")
-    f.write(nationallity)
-    f.write(" ")
-    f.write('{}'.format(id))
-    print("Saved")
-if save == "N" or "n":
-    print("Console - DATA Discarded")
-    
-
-Proceed = input("Wish to proceed? Y/N: ")
-if Proceed == "Y":
-    
-    print("Closing program")
-if Proceed == "N":
-    quit
+    login_function(username, password)
