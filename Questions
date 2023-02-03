@@ -1,35 +1,62 @@
 import time
 
 def login_function(username, password):
-    print("\n\nWelcome to Jack Program. Please Login: ")
+    print('\n\Welcome to Jacks program! please login: ')
+    print('1', username, password)
+    user_entered_username = input('Username: ')
+    user_entered_password = input('Password: ')
+    
 
-    user_entered_username = input("Enter USERNAME: ")
-    user_entered_password = input("Enter PASSWORD: ")
-    if user_entered_username == username and user_entered_password == password():
-        print("Login Successful.")
+    if user_entered_username == username and user_entered_password == password:
+        print('Login successful: ')
         time.sleep(1)
     else:
-        print("login failed.")
-        time.sleep, quit()
-
-def find_username(incoming_credendials_files):
-    username = incoming_credendials_files.readline()
-    print("USERNAME: " + username) 
+        print('Login failed: ')
+        time.sleep(1), quit
+    
+def find_username(incoming_credendials_file):
+    username = incoming_credendials_file.readline()[1:0]
+    print("Username: " + username)
     return username
 
-def find_password(incoming_credendials_files):
-    password = incoming_credendials_files.readline.readline()
-    print("PASSWORD: " + password)
+def find_password(incoming_credendials_file):
+    password = incoming_credendials_file.readline()[2:0]
+    print("Password: " + password)
     return password
 
+def enter_user_credendials(name, age, nationality):
+    name = input("Enter your name: ")
+    age = int(input("Enter your age: "))
+    nationality = input("Enter your nationality: ")
+    print(name, age, nationality)
+    save_credendtials(name, age, nationality)
+    return name, age, nationality
+
+def save_credendtials(name, age, nationality):
+    save = input("Save credendials? Y/N: ")
+    if save == 'Y':
+        open('data.txt', 'w')
+        with open('data.txt', 'w') as f:
+            f.write(name)
+            f.write(" ")
+            f.write('{}'.format(age))
+            f.write(" ")
+            f.write(nationality)
+            print("DATA Saved")
+    if save == 'N':
+        print("DATA Not saved: ")
+    return name, age, nationality
+
 def main():
+    credendials_file = open('login.txt', 'r')
+    username = find_username(credendials_file)
+    password = find_password(credendials_file)
 
-    credenials_file = open("login.txt", "r")
-    username = find_username(credenials_file)
-    password = find_password(credenials_file)
-   
-   
-    find_username
-    find_password
 
+    #enter_user_credendials(name=input, age=input, nationality=input)
+    #save_credendtials
+    
     login_function(username, password)
+
+if __name__ == "__main__":
+    main()
